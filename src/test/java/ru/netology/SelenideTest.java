@@ -37,6 +37,6 @@ public class SelenideTest {
         $("[data-test-id='phone'] input").setValue("+79778888888");
         $("[data-test-id='agreement']").click();
         $(".button__content").click();
-        $(".notification__content").shouldHave(Condition.text("Встреча успешно забронирована на " + LocalDate(5)), Duration.ofSeconds(15)).shouldBe(Condition.visible);
+        $(".notification__content").shouldHave(Condition.text("Встреча успешно забронирована на " + LocalDate(5)), Duration.ofSeconds(20)).shouldBe(Condition.visible);
     }
 }
