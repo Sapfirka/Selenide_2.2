@@ -7,16 +7,13 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.open;
 
 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.codeborne.selenide.Selenide.open;
-import static java.time.temporal.TemporalQueries.localDate;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SelenideTest {
     public String LocalDate(int day) {
@@ -32,7 +29,7 @@ public class SelenideTest {
         Configuration.holdBrowserOpen = true;
         $("[data-test-id='city'] input").setValue("Москва");
         $("[data-test-id='date'] input").sendKeys(Keys.SHIFT, Keys.HOME, Keys.BACK_SPACE);
-        $("[data-test-id='date'] input").setValue("22.04.2023");
+        $("[data-test-id='date'] input").setValue(LocalDate(5));
         $("[data-test-id='name'] input").setValue("Васильев-Петров Иван");
         $("[data-test-id='phone'] input").setValue("+79778888888");
         $("[data-test-id='agreement']").click();
